@@ -1,13 +1,8 @@
 import {combineReducers} from 'redux';
-import themeReducer from './GlobalReducer';
-import {TGlobalState} from './reducerType';
+import globalReducer from './GlobalReducer';
 
-type IRootReducer = {
-  global: TGlobalState;
-};
-
-const rootReducer = combineReducers<IRootReducer>({
-  global: themeReducer, 
+const rootReducer = combineReducers({
+  global: globalReducer, 
 });
 
 export default rootReducer;

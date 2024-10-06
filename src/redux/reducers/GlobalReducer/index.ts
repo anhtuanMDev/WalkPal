@@ -12,15 +12,15 @@ const initialState: TGlobalState = {
   errorMess: '',
 };
 
-const themeReducer = (
-  state: TGlobalState | undefined = initialState,
+const globalReducer = (
+  state = initialState,
   action: TActionProp<TGlobalState>,
 ): TGlobalState => {
   if(state !== undefined ){switch (action.type) {
     case ACTION.GLOBAL.PENDING.UPDATE_CURRENT_PENDING_STATE:
       return {
         ...state,
-        load: action?.payload?.load ?? false,
+        load: action.payload?.load ?? false,
       };
 
     case ACTION.GLOBAL.THEME.CHANGE_THEME_SUCCESS:
@@ -41,12 +41,15 @@ const themeReducer = (
         errorMess: action?.payload?.errorMess ?? "There's an empty error message in store",
       };
 
-    case ACTION.GLOBAL.SUCCESS.UPDATE_SUCCESS_STATE:
-      return {
-        ...state,
-        success: action?.payload?.success ?? true,
-        successMess: action?.payload?.successMess ?? "There's an empty success message in store",
-      };
+      case ACTION.GLOBAL.SUCCESS.UPDATE_SUCCESS_STATE:
+        console.log("Call success", action.payload)
+        console.log(state)
+        return {
+          ...state,
+          success: action.payload?.success || false,
+          successMess: action.payload?.successMess || "Empty Success Message",
+        };
+      
 
     case ACTION.GLOBAL.FAILURE.UDPATE_FAILURE_STATE:
       return {
@@ -60,4 +63,4 @@ const themeReducer = (
   }} else return initialState;
 };
 
-export default themeReducer;
+export default globalReducer;

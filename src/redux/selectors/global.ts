@@ -1,9 +1,9 @@
-import { TGlobalState } from "../reducers/reducerType";
+import { TAppState } from "../reducers/reducerType";
 
-export const selectColorScheme = (state: TGlobalState) => state.colorScheme;
-export const selectColorSchemeAlpha = (state: TGlobalState) => state.colorSchemeAlpha;
-export const selectLoadingState = (state: TGlobalState) => state.load;
-export const selectSuccess = (state: TGlobalState) => state.success;
-export const selectSuccessMess = (state: TGlobalState) => state.successMess;
-export const selectError = (state: TGlobalState) => state.error;
-export const selectErrorMess = (state: TGlobalState) => state.errorMess;
+export const selectColorScheme = (state: TAppState) => state.global.colorScheme;
+export const selectColorSchemeAlpha = (state: TAppState) => state.global.colorSchemeAlpha;
+export const selectLoadingState = (state: TAppState) => state.global.load;
+export const selectSuccess = (state: TAppState) => state.global.success;
+export const selectSuccessMess = (state: TAppState) => state.global.successMess;
+export const selectError = (state: TAppState) => state.global.error;
+export const selectErrorMess = (state: TAppState) => state.global.errorMess;

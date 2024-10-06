@@ -1,4 +1,4 @@
-import { TextStyle, ViewStyle } from "react-native";
+import { StyleProp, TextStyle, ViewStyle } from "react-native";
 
 export type TTitlePosition = 'left' | 'center' | 'right';
 
@@ -10,6 +10,6 @@ export type TAppHeader = {
     onLead?: () => void;
     onAction?: (index: number) => void;
     titlePosition?: TTitlePosition;
-    titleStyle?: TextStyle | TextStyle[];
-    containerStyle?: ViewStyle | ViewStyle[];
+    titleStyle?: StyleProp<TextStyle>
+    containerStyle?: StyleProp<ViewStyle>
   };

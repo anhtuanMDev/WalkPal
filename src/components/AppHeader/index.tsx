@@ -14,7 +14,6 @@ export default function ({
   titleStyle,
   containerStyle,
 }: TAppHeader) {
-  // Memoize the action buttons
   const actionButtons = useMemo(() => {
     if (Array.isArray(action)) {
       return action.map((item, index) => (
@@ -80,6 +79,7 @@ export default function ({
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: getSize.v(10),
     height: getSize.v(40),
     flexDirection: 'row',
     justifyContent: 'space-between',
